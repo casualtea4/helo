@@ -39,13 +39,14 @@ class Auth extends Component{
             this.props.getUser(res.data)
             this.setState({username:'',passsword:''})
             this.props.history.push('/dashboard')
-            console.log('did this work?')
-            console.log(res.data)
+            // console.log('did this work?')
+            // console.log(res.data)
         })
         .catch(err=>console.log(err))
     }
 
     render(){
+        console.log(this.props)
         return(
             <div>
                 Auth

@@ -49,7 +49,7 @@ module.exports = {
         res.sendStatus(200);
     },
     getPosts: (req,res) => {
-        const {} = req.params;
+        const {id} = req.params;
         const db = req.app.get('db');
 
         // if(check=true){
@@ -63,7 +63,7 @@ module.exports = {
         //     //return posts where current user is not author and title contains the search string
         // }
 
-        db.get_posts().then(posts => {
+        db.get_posts(id).then(posts => {
             res.status(200).send(posts)
         })
         .catch(err => res.status(500).send(err))
